@@ -1,4 +1,4 @@
-# ember-inject-scripts 
+# ember-inject-scripts
 Seamlessly inject any sort of scripts inside your ember application
 
 ## Features
@@ -8,7 +8,7 @@ Seamlessly inject any sort of scripts inside your ember application
   - Inject inline scripts
   - Get all scripts cached events on done.
 
-## Installation 
+## Installation
 
     npm install --save ember-inject-scripts
 
@@ -36,21 +36,21 @@ Seamlessly inject any sort of scripts inside your ember application
           ]
         }
       ]
-      
+
       injectScripts(scripts).then(() => {
         console.log ( "🤟Yay ! scripts injected" );
       });
-      
-      ----> 
+
+      ---->
       <script type="text/javascript" id="vuejs" data-test-script="vuejs" data-library="vuejs"
       src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
-      
+
       <script type="text/javascript" id="inline" data-test-script="inline" data-inline="true">
         console.log('inline script rendered');
       </script>
 
  **injectScripts** function expects **array of objects as parameter**, the object items are,
- 
+
  | name        | type           | description  |
 | ------------- |:-------------:| -----|
 | id      | string : optional | Adds an id attribute to the script element `id=id` and also creates a test selector `data-test-script=id` |

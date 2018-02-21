@@ -1,6 +1,6 @@
 {
   "name": "ember-inject-scripts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Seamlessly inject any sort of scripts inside your ember application",
   "keywords": [
     "ember-addon"

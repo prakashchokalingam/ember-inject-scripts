@@ -1,7 +1,7 @@
 {
   "name": "ember-inject-scripts",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.2",
+  "description": "Seamlessly inject any sort of scripts inside your ember application",
   "keywords": [
     "ember-addon"
   ],
@@ -11,7 +11,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/prakashchokalingam/ember-inject-scripts/",
   "scripts": {
     "build": "ember build",
     "start": "ember server",

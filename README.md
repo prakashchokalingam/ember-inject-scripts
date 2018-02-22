@@ -1,6 +1,13 @@
 # ember-inject-scripts
 Seamlessly inject any sort of scripts inside your ember application
 
+[![Build Status](https://travis-ci.org/prakashchokalingam/ember-inject-scripts.svg?branch=master)](https://travis-ci.org/prakashchokalingam/ember-inject-scripts) 
+[![npm](https://img.shields.io/npm/dm/ember-inject-scripts.svg)](https://www.npmjs.com/package/ember-inject-scripts)
+[![npm version](http://img.shields.io/npm/v/ember-inject-scripts.svg?style=flat)](https://npmjs.org/package/ember-inject-scripts "View this project on npm")
+[![dependencies Status](https://david-dm.org/prakashchokalingam/ember-inject-scripts/status.svg)](https://david-dm.org/prakashchokalingam/ember-inject-scripts)
+[![devDependencies Status](https://david-dm.org/rajasegar/ember-addon-starterkit/dev-status.svg)](https://david-dm.org/rajasegar/ember-addon-starterkit?type=dev)
+[![EmberObserver](http://emberobserver.com/badges/ember-inject-scripts.svg?branch=master)](http://emberobserver.com/addons/ember-inject-scripts)
+
 ## Features
   - Inject multiple scripts
   - Get onload and onerror callbacks for induvidual scripts
@@ -57,7 +64,7 @@ Seamlessly inject any sort of scripts inside your ember application
 | type      | string : optional : default `text/javascript` | Adds type to the script element |
 | src      | string : optional | Adds a source to the script element `src=src`|
 | inline      | string : optional | Adds inline contents to the script element `<script> inline </script>` |
-| attributes      | Array of object : optional `{ name: 'data-inline', value: 'true' }`| Adds attribute contents to the script element `<script data-inline="true"> inline </script>` |
+| attributes      | Array of objects : optional `{ name: 'data-inline', value: 'true' }`| Adds attribute contents to the script element `<script data-inline="true"> inline </script>` |
 | onload      | function : optional | Callback function for successive load of script. **not available for inline scripts** |
 | onerror      | function : optional | Callback function for failure while loading of script. **not available for inline scripts** |
 

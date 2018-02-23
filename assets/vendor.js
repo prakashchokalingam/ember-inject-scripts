@@ -73563,8 +73563,8 @@ define('ember-ajax/utils/url-helpers', ['exports', 'ember-ajax/utils/is-fastboot
   exports.RequestURL = RequestURL;
 });
 /* global require, module, URL */
-define('ember-inject-scripts/index', ['exports', 'ember-inject-scripts/utils/inject-scripts.js'], function (exports, _emberInjectScriptsUtilsInjectScriptsJs) {
-  exports['default'] = _emberInjectScriptsUtilsInjectScriptsJs['default'];
+define('ember-inject-scripts/index', ['exports', 'ember-inject-scripts/utils/inject-scripts'], function (exports, _emberInjectScriptsUtilsInjectScripts) {
+  exports['default'] = _emberInjectScriptsUtilsInjectScripts['default'];
 });
 define('ember-inject-scripts/utils/inject-scripts', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = injectScripts;
@@ -73702,8 +73702,10 @@ define('ember-inject-scripts/utils/inject-scripts', ['exports', 'ember'], functi
       })();
 
       if (typeof _ret2 === 'object') return _ret2.v;
+    } else if (typeof scripts === 'string') {
+      var script = { src: scripts };
+      return injectScript(script);
     } else {
-
       return injectScript(scripts);
     }
   }

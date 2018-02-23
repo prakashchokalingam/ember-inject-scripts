@@ -223,6 +223,17 @@ define('dummy/tests/unit/utils/inject-scripts-test', ['exports', 'dummy/utils/in
     var $scriptEl = document.querySelector(testSelector);
     assert.ok($scriptEl, 'Injected the inline script with the selector ' + testSelector);
   });
+
+  (0, _qunit.test)('it injects the given direct script url', function (assert) {
+    var script = scripts[0];
+
+    (0, _dummyUtilsInjectScripts['default'])(script.src);
+
+    // it injected the given inline script
+    var testSelector = '[src="' + script.src + '"]';
+    var $scriptEl = document.querySelector(testSelector);
+    assert.ok($scriptEl, 'Injected the given script url directly');
+  });
 });
 require('dummy/tests/test-helper');
 EmberENV.TESTS_FILE_LOADED = true;

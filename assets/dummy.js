@@ -175,11 +175,13 @@ define('dummy/resolver', ['exports', 'ember-resolver'], function (exports, _embe
 define('dummy/router', ['exports', 'ember', 'dummy/config/environment'], function (exports, _ember, _dummyConfigEnvironment) {
 
   var Router = _ember['default'].Router.extend({
-    location: _dummyConfigEnvironment['default'].locationType,
+    location: 'hash',
     rootURL: _dummyConfigEnvironment['default'].rootURL
   });
 
-  Router.map(function () {});
+  Router.map(function () {
+    this.route('/');
+  });
 
   exports['default'] = Router;
 });

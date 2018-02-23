@@ -23,9 +23,10 @@ Seamlessly inject any sort of scripts inside your ember application
 
 ## Usage
 
+### Single script injection
+
       import 'injectScripts' from 'inject-scripts';
 
-      // single script injection
       let singleScript = {
         id: 'vuejs',
         src: 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js',
@@ -44,8 +45,11 @@ Seamlessly inject any sort of scripts inside your ember application
       ---->
       <script type="text/javascript" id="vuejs" data-test-script="vuejs" data-library="vuejs"
       src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
-
-      // multiple scripts injection
+      
+ ### Multiple scripts injection
+      
+      import 'injectScripts' from 'inject-scripts';
+      
       let multipleScripts = [
         {
           id: 'vuejs',

@@ -86,9 +86,9 @@ const injectScript = (script) => {
         if (script.onerror) {
           script.onerror(e);
         }
-        removeEvents($scriptEl, script);
         // removing element
         $scriptEl.remove();
+        removeEvents($scriptEl, script);
       }
 
       // success
@@ -120,6 +120,7 @@ export default function injectScripts(scriptObjects) {
     });
 
     return all(promisePool);
+
 
   } else {
 

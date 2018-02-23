@@ -1,5 +1,42 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div style="margin:auto">
+  <h1> Inject Scripts demo page </h1>
+  <h3> # Passed params (multiple script injection)</h3>
+  <div style="padding:30px; margin:20px; background-color: rgb(245, 245, 245);color: blue;">
+    {{ stringed }}
+    <div style="margin-top:10px;">
+        <span style="color: orange">Status: </span>
+      {{#if multipleScriptsStatus}}
+        <span style="color: green">Done</span>
+      {{else}}
+        <span style="color: red">Injecting...</span>
+      {{/if}}
+    </div>
+  </div>
+<h3> ## Injected Script </h3>
 
-{{outlet}}
+<pre><code>
+  &lt; script type="text/javascript" id="lodash" data-test-script="lodash" data-library="lodash" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.js" async="" &gt; &lt; /script &gt;
+  &lt; script type="text/javascript" id="vuejs" data-test-script="vuejs" data-library="vuejs" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js" async="" &gt; &lt; /script &gt;
+  &lt; script type="text/javascript" id="inline" data-test-script="inline" data-inline="true" async="" &gt; console.log('inline script rendered')&lt; /script &gt;
+</code></pre>
+</div>
+
+<h3> # Passed params (Single script injection)</h3>
+
+<div style="padding:30px; margin:20px; background-color: rgb(245, 245, 245);color: blue;">
+  {{ singleScriptStringed }}
+  <div style="margin-top:10px;">
+      <span style="color: orange">Status: </span>
+    {{#if singleScriptStatus}}
+      <span style="color: green">Done</span>
+    {{else}}
+      <span style="color: red">Injecting...</span>
+    {{/if}}
+  </div>
+</div>
+
+<h3> ## Injected Script </h3>
+
+<pre><code>
+  &lt; script type="text/javascript" id="vuejs" data-test-script="vuejs" data-library="vuejs" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js" async="" &gt; &lt; /script &gt;
+</code></pre>

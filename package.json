@@ -1,12 +1,14 @@
 {
   "name": "ember-inject-scripts",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Seamlessly inject any sort of scripts inside your ember application",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "inject-script",
+    "ember-inject-scripts"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "Prakash Chokalingam",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -45,6 +47,7 @@
     "node": ">= 4"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "https://prakashchokalingam.github.io/ember-inject-scripts/"
   }
 }

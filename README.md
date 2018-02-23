@@ -1,7 +1,7 @@
 # ember-inject-scripts
 Seamlessly inject any sort of scripts inside your ember application
 
-[![Build Status](https://travis-ci.org/prakashchokalingam/ember-inject-scripts.svg?branch=master)](https://travis-ci.org/prakashchokalingam/ember-inject-scripts) 
+[![Build Status](https://travis-ci.org/prakashchokalingam/ember-inject-scripts.svg?branch=master)](https://travis-ci.org/prakashchokalingam/ember-inject-scripts)
 [![npm](https://img.shields.io/npm/dm/ember-inject-scripts.svg)](https://www.npmjs.com/package/ember-inject-scripts)
 [![npm version](http://img.shields.io/npm/v/ember-inject-scripts.svg?style=flat)](https://npmjs.org/package/ember-inject-scripts "View this project on npm")
 [![dependencies Status](https://david-dm.org/prakashchokalingam/ember-inject-scripts/status.svg)](https://david-dm.org/prakashchokalingam/ember-inject-scripts)
@@ -9,10 +9,12 @@ Seamlessly inject any sort of scripts inside your ember application
 [![EmberObserver](http://emberobserver.com/badges/ember-inject-scripts.svg?branch=master)](http://emberobserver.com/addons/ember-inject-scripts)
 
 ## Features
+  - Inject single script
   - Inject multiple scripts
-  - Get onload and onerror callbacks for induvidual scripts
+  - Get onload and onerror callbacks for individual scripts
   - Inject scripts with attributes
   - Inject inline scripts
+  - Inject script only once
   - Get all scripts cached events on done.
 
 ## Installation
@@ -21,7 +23,30 @@ Seamlessly inject any sort of scripts inside your ember application
 
 ## Usage
 
-      let scripts = [
+      import 'injectScripts' from 'inject-scripts';
+
+      // single script injection
+      let singleScript = {
+        id: 'vuejs',
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js',
+        attributes: [
+          {
+            name: 'data-library',
+            value: 'vuejs'
+          }
+        ]
+      };
+
+      injectScripts(singleScript).then(() => {
+        console.log ( "🤟Yay ! script injected" );
+      });
+
+      ---->
+      <script type="text/javascript" id="vuejs" data-test-script="vuejs" data-library="vuejs"
+      src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+
+      // multiple scripts injection
+      let multipleScripts = [
         {
           id: 'vuejs',
           src: 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js',
@@ -30,7 +55,8 @@ Seamlessly inject any sort of scripts inside your ember application
               name: 'data-library',
               value: 'vuejs'
             }
-          ]
+          ],
+          once: true
         },
         {
           id: 'inline',
@@ -44,8 +70,9 @@ Seamlessly inject any sort of scripts inside your ember application
         }
       ]
 
-      injectScripts(scripts).then(() => {
-        console.log ( "🤟Yay ! scripts injected" );
+      injectScripts(multipleScripts).then((events) => {
+        // events - holds data for all scripts injection as array
+        console.log ( "🤟🤟🤟Yay ! multiple scripts injected" );
       });
 
       ---->
@@ -56,7 +83,7 @@ Seamlessly inject any sort of scripts inside your ember application
         console.log('inline script rendered');
       </script>
 
- **injectScripts** function expects **array of objects as parameter**, the object items are,
+ **injectScripts** function expects **object** for single script inject and **array of objects** for multiple scripts injection as parameter, the object items are,
 
  | name        | type           | description  |
 | ------------- |:-------------:| -----|
@@ -64,6 +91,7 @@ Seamlessly inject any sort of scripts inside your ember application
 | type      | string : optional : default `text/javascript` | Adds type to the script element |
 | src      | string : optional | Adds a source to the script element `src=src`|
 | inline      | string : optional | Adds inline contents to the script element `<script> inline </script>` |
+| once      | boolean : optional | Looks for an element with the same `id` passed. If founded avoids the injection and returns the dom element as target |
 | attributes      | Array of objects : optional `{ name: 'data-inline', value: 'true' }`| Adds attribute contents to the script element `<script data-inline="true"> inline </script>` |
 | onload      | function : optional | Callback function for successive load of script. **not available for inline scripts** |
 | onerror      | function : optional | Callback function for failure while loading of script. **not available for inline scripts** |

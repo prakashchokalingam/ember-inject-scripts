@@ -1,3 +1,3 @@
-import injectScripts from './utils/inject-scripts.js';
+import injectScripts from './utils/inject-scripts';
 
 export default injectScripts;

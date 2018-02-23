@@ -16,6 +16,10 @@ Seamlessly inject any sort of scripts inside your ember application
   - Inject inline scripts
   - Inject script only once
   - Get all scripts cached events on done.
+  
+## [Demo](https://prakashchokalingam.github.io/ember-inject-scripts)
+
+[https://prakashchokalingam.github.io/ember-inject-scripts](https://prakashchokalingam.github.io/ember-inject-scripts)
 
 ## Installation
 

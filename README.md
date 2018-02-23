@@ -1,5 +1,7 @@
-# ember-inject-scripts
+# ember-inject-scripts <img src="https://emberjs.com/images/tomster-sm.png" height="50px" width="50px">
 Seamlessly inject any sort of scripts inside your ember application
+
+
 
 [![Build Status](https://travis-ci.org/prakashchokalingam/ember-inject-scripts.svg?branch=master)](https://travis-ci.org/prakashchokalingam/ember-inject-scripts)
 [![npm](https://img.shields.io/npm/dm/ember-inject-scripts.svg)](https://www.npmjs.com/package/ember-inject-scripts)

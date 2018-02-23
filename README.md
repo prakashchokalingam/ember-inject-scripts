@@ -16,7 +16,7 @@ Seamlessly inject any sort of scripts inside your ember application
   - Inject inline scripts
   - Inject script only once
   - Get all scripts cached events on done.
-  
+
 ## Demo
 
 <a href="https://prakashchokalingam.github.io/ember-inject-scripts" target="_blank">https://prakashchokalingam.github.io/ember-inject-scripts!</a>
@@ -29,7 +29,13 @@ Seamlessly inject any sort of scripts inside your ember application
 
 ### Single script injection
 
-      import 'injectScripts' from 'inject-scripts';
+      import 'injectScript' from 'inject-scripts';
+
+      injectScript("https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js").then(() => {
+        console.log ( "🤟Yay ! script injected" );
+      });
+
+                    -------- or  --------
 
       let singleScript = {
         id: 'vuejs',
@@ -42,18 +48,18 @@ Seamlessly inject any sort of scripts inside your ember application
         ]
       };
 
-      injectScripts(singleScript).then(() => {
+      injectScript(singleScript).then(() => {
         console.log ( "🤟Yay ! script injected" );
       });
 
       ---->
       <script type="text/javascript" id="vuejs" data-test-script="vuejs" data-library="vuejs"
       src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
-      
- ### Multiple scripts injection
-      
+
+### Multiple scripts injection
+
       import 'injectScripts' from 'inject-scripts';
-      
+
       let multipleScripts = [
         {
           id: 'vuejs',

@@ -21,6 +21,26 @@
 </code></pre>
 </div>
 
+<h3> # Passed params (Single script injection - direct url)</h3>
+
+<div style="padding:30px; margin:20px; background-color: rgb(245, 245, 245);color: blue;">
+  {{ singleScript.src }}
+  <div style="margin-top:10px;">
+      <span style="color: orange">Status: </span>
+    {{#if singleScriptDirectStringStatus}}
+      <span style="color: green">Done</span>
+    {{else}}
+      <span style="color: red">Injecting...</span>
+    {{/if}}
+  </div>
+</div>
+
+<h3> ## Injected Script </h3>
+
+<pre><code>
+  &lt; script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js" async="" &gt; &lt; /script &gt;
+</code></pre>
+
 <h3> # Passed params (Single script injection)</h3>
 
 <div style="padding:30px; margin:20px; background-color: rgb(245, 245, 245);color: blue;">

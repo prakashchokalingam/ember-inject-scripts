@@ -121,9 +121,14 @@ export default function injectScripts(scriptObjects) {
 
     return all(promisePool);
 
-  } else {
+  }
 
+  else if (typeof scripts === 'string') {
+    let script = { src: scripts };
+    return injectScript(script);
+  }
+
+  else {
     return injectScript(scripts);
-
   }
 }

@@ -65,6 +65,7 @@ export default Ember.Controller.extend({
   multipleScriptsStatus: false,
   singleScript,
   singleScriptStatus: false,
+  singleScriptDirectStringStatus: false,
   stringed: computed('scripts', function () {
     return JSON.stringify(this.get('scripts'));
   }),
@@ -72,6 +73,11 @@ export default Ember.Controller.extend({
     return JSON.stringify(this.get('singleScript'));
   }),
   init () {
+    injectScripts(singleScript.src).then((d) => {
+      console.log('direct string url script injection'); //eslint-disable-line no-console
+      console.log(d); //eslint-disable-line no-console
+      this.set('singleScriptDirectStringStatus', true);
+    })
     // inject multiple script
     injectScripts(this.get('scripts')).then((d) => {
       this.set('multipleScriptsStatus', true);

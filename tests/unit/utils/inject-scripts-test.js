@@ -112,3 +112,14 @@ test('it injects the given single inline script',  function (assert) {
   assert.ok($scriptEl, `Injected the inline script with the selector ${testSelector}`);
 
 })
+
+test('it injects the given direct script url',  function (assert) {
+  let [script] = scripts;
+  injectScripts(script.src);
+
+  // it injected the given inline script
+  let testSelector = `[src="${script.src}"]`;
+  let $scriptEl = document.querySelector(testSelector)
+  assert.ok($scriptEl, `Injected the given script url directly`);
+
+})

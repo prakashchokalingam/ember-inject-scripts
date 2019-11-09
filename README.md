@@ -1,4 +1,4 @@
-# ember-inject-scripts <img src="https://ember-inject-scripts-assets.netlify.com/tomster.png" height="100px" width="100px">
+# ember-inject-scripts <img src="https://ember-inject-scripts-assets.netlify.com/tom.png" height="50px" width="100px">
 Seamlessly inject any sort of scripts inside your ember application
 
 
@@ -33,19 +33,19 @@ Seamlessly inject any sort of scripts inside your ember application
 
       import 'injectScript' from 'inject-scripts';
 
-      injectScript("https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js").then(() => {
+      injectScript("https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.js").then(() => {
         console.log ( "🤟Yay ! script injected" );
       });
 
                     -------- or  --------
 
       let singleScript = {
-        id: 'vuejs',
-        src: 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js',
+        id: 'datefns',
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.js',
         attributes: [
           {
             name: 'data-library',
-            value: 'vuejs'
+            value: 'datefns'
           }
         ]
       };
@@ -55,8 +55,8 @@ Seamlessly inject any sort of scripts inside your ember application
       });
 
       ---->
-      <script type="text/javascript" id="vuejs" data-test-script="vuejs" data-library="vuejs"
-      src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+      <script type="text/javascript" id="datefns" data-test-script="datefns" data-library="datefns"
+      src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.js"></script>
 
 ### Multiple scripts injection
 
@@ -64,12 +64,12 @@ Seamlessly inject any sort of scripts inside your ember application
 
       let multipleScripts = [
         {
-          id: 'vuejs',
-          src: 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js',
+          id: 'datefns',
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.js',
           attributes: [
             {
               name: 'data-library',
-              value: 'vuejs'
+              value: 'datefns'
             }
           ],
           once: true
@@ -92,8 +92,8 @@ Seamlessly inject any sort of scripts inside your ember application
       });
 
       ---->
-      <script type="text/javascript" id="vuejs" data-test-script="vuejs" data-library="vuejs"
-      src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+      <script type="text/javascript" id="datefns" data-test-script="datefns" data-library="datefns"
+      src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.js"></script>
 
       <script type="text/javascript" id="inline" data-test-script="inline" data-inline="true">
         console.log('inline script rendered');

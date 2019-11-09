@@ -1,4 +1,4 @@
-# ember-inject-scripts <img src="https://emberjs.com/images/tomster-sm.png" height="50px" width="50px">
+# ember-inject-scripts <img src="https://ember-inject-scripts-assets.netlify.com/tomster.png" height="100px" width="100px">
 Seamlessly inject any sort of scripts inside your ember application
 
 
